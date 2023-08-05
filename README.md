@@ -1,26 +1,101 @@
-# Getting Started with Create React App
+# Amazon Clone
 
+Amazon Clone is the Fully functional Real custom made Web application that covers and entire E-commerece functionality from designing, User Authentication till Payments build using `React JS`, `Firebase` and `Stripe`.
+
+- To view the deployed Application, click on the link given below : ***Amazon Clone Web App*** 
+  - [https://clone-961f9.web.app/](https://clone-961f9.web.app/)  
+  
+**A Demo of the Web App :**
+
+![Amazon Clone](https://github.com/asthasharma98/Amazon-clone/blob/master/Readme%20Resource/amazon.gif)
+
+### Features 
+
+As a user you can 
+
+- Login/Log out or set up a New Account(Register) 
+- View list of different products 
+- Add and remove them from Cart 
+- proceed to checkout page to buy the product 
+- create orders and Make payments 
+- View Order history and details 
+
+### Project Structure
+
+Project consist of following stages:
+
+- Setting up a react Router 
+- creating the Navigation bar
+- Creating the home Page of Amazon - to display sample products
+- Setting up a React [Context API](https://reactjs.org/docs/context.html) - The Context API is a component structure provided by the React framework, which enables us to share specific states across all levels of the application. In this project, there is need to manage two states: basket (to manage the shopping cart) and user (for managing the details of the currently logged in user).
+- Setting up payment functionality using API's provided by [Stripe](https://stripe.com/in)(Stripe is an online payment processing and credit card processing platform for businesses.)
+- Setting up a [Firebase](https://firebase.google.com/) - for Handling database, authentication and also for depolying application.Basically the database will be used to store the login information for the users, but the resource can be used for storing product information as well.
+- Setting up Authentication
+- Deployement 
+
+### Firebase 
+
+Firebase is a great service provided by Google for configuring the backend of any web application with all the general necessities like database preparation, authentication using various methods, etc.
+
+#### Setup
+
+- Create a project on Firebase, setup the database and setup sign-in method using Email/Password.
+- Register your application and set up Firebase hosting.
+- nstall necessary Firebase dependencies in your local setup.
+  ```
+  npm install -g firebase-tools && npm install firebase && firebase login
+  ```
+- Open the `Firebase SDK snippet` section in your Firebase project and copy paste the necessary configuration in a file named `firebase.js`.
+- In this file, utilize the below code to make use of Firebase authentication and database.
+   ```
+   const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+   const db = firebaseApp.firestore();
+   const auth = firebase.auth();
+
+   export { db, auth };
+   ```
+   
+   **Reference link for above process is given below :**
+   
+   - [https://firebase.google.com/docs/web/setup](https://firebase.google.com/docs/web/setup)
+   - [https://blog.logrocket.com/user-authentication-firebase-react-apps/](https://blog.logrocket.com/user-authentication-firebase-react-apps/)
+
+ #### Deployment 
+  
+  - To deploy a production version of the Amazon Clone, we need to set up Firebase hosting. Type command in console
+    ```
+    npm init
+    ```
+  - Build your React application.
+    ```
+    npm run build
+    ```
+  - Setup Firebase hosting and deploy
+    ```
+    firebase deploy
+    ```
+  **Reference link for deploying application on firebase**
+   - [https://firebase.google.com/docs/hosting/quickstart](https://firebase.google.com/docs/hosting/quickstart)
+   - [https://medium.com/swlh/how-to-deploy-a-react-app-with-firebase-hosting-98063c5bf425](https://medium.com/swlh/how-to-deploy-a-react-app-with-firebase-hosting-98063c5bf425)
+   
+ ### Usage 
+ 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+#### Available Scripts
 
 In the project directory, you can run:
-
-### `npm start`
+```
+npm start 
+```
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
+```
+npm build
+```
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
@@ -29,42 +104,31 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+***To run the application locally; clone the repo, install dependencies and run the app.***
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+***To clone the repository***
+```
+https://github.com/asthasharma98/Amazon-clone.git
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Tools and Technologies 
+  
+  ![https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white)	
+  ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+  ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+  ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
+  ![https://img.shields.io/badge/Stripe-626CD9?style=for-the-badge&logo=Stripe&logoColor=white](https://img.shields.io/badge/Stripe-626CD9?style=for-the-badge&logo=Stripe&logoColor=white)
+ ![https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white](	https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+  
+### Reference Link 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- [How to integrate stripe with react](https://www.pluralsight.com/guides/how-to-integrate-stripe-with-react)
+- [https://stripe.com/docs/stripe-js/react](https://stripe.com/docs/stripe-js/react)
+- [https://www.toptal.com/react/react-context-api](https://www.toptal.com/react/react-context-api)
+- [http://getbem.com/naming/](http://getbem.com/naming/)
+- [https://www.digitalocean.com/community/tutorials/how-to-create-custom-components-in-react](https://www.digitalocean.com/community/tutorials/how-to-create-custom-components-in-react)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Credits 
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Clever Programmer](https://www.youtube.com/c/CleverProgrammer)
+  
